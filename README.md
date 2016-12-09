@@ -2,7 +2,6 @@
 
 
 
-
 ## 英雄id和对应的名字
 ```json
 {"1": "Anti-Mage"}
@@ -157,24 +156,24 @@
 ```python
 [u'radiant', u'MVP_Phoenix', u'Ogre_Magi', u"Nature's_Prophet", u'Drow_Ranger', u'Disruptor', u'Visage'] classified as:  0
 ```
-[](BostonMajor/pic/mvp.png?raw=true)
+![](BostonMajor/pic/mvp.png?raw=true)
 
 预测为失败，和实际情况相同
 
 ```python
 [u'dire', u'Newbee', u'Slardar', u'Rubick', u'Juggernaut', u'Treant_Protector', u'Templar_Assassin'] classified as:  1
 ```
-[](BostonMajor/pic/newbee.png?raw=true)
+![](BostonMajor/pic/newbee.png?raw=true)
 预测为获胜，和实际情况相同
 
 ```python
 [u'radiant', u'Virtus.pro', u'Ogre_Magi', u'Lifestealer', u'Sand_King', u'Io', u'Shadow_Fiend'] classified as:  1
 ```
-[](BostonMajor/pic/vp.png?raw=true)
+![](BostonMajor/pic/vp.png?raw=true)
 预测为成功，和实际情况相同
 
 ```python
 [u'dire', u'Team_NP', u'Drow_Ranger', u'Omniknight', u'Rubick', u'Outworld_Devourer', u'Undying'] classified as:  1
 ```
-[](BostonMajor/pic/np.png?raw=true)
+![](BostonMajor/pic/np.png?raw=true)
 预测为失败，和实际情况相反
