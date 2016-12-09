@@ -1,6 +1,23 @@
 # DotA2
 
+安装dota2api
+```python
+$ pip install dota2api
+```
 
+如果这种方式没有成功的话，可以用build source的方式
+
+```python
+$ git clone https://github.com/joshuaduffy/dota2api/ && cd dota2api/
+$ python setup.py install
+```
+
+去Valve申请 API Key
+[链接在这里](https://steamcommunity.com/dev/apikey)
+
+
+之后就可以写脚本，利用api获得很多很多的数据了。
+[具体的api使用教程](http://dota2api.readthedocs.io/en/latest/index.html)
 
 ## 英雄id和对应的名字
 ```json
@@ -129,10 +146,22 @@
 
 目前已经使用了88个英雄
 ```python
-[u'Razor', u'Legion_Commander', u'Ogre_Magi', u'Juggernaut', u'Ursa', u'Ancient_Apparition', u'Jakiro', u'Pugna', u'Tinker', u'Omniknight', u'Undying', u'Elder_Titan', u'Abaddon', u'Dark_Seer', u'Mirana', u'Bristleback', u'Sand_King', u'Slardar', u'Anti-Mage', u'Storm_Spirit', u'Medusa', u'Ember_Spirit', u'Queen_of_Pain', u'Enchantress', u'Riki', u'Invoker', u'Earth_Spirit', u"Nature's_Prophet", u'Sniper', u'Witch_Doctor', u'Leshrac', u'Silencer', u'Enigma', u'Doom', u'Spirit_Breaker', u'Alchemist', u'Batrider', u'Brewmaster', u'Dragon_Knight', u'Axe', u'Drow_Ranger', u'Shadow_Demon', u'Clinkz', u'Venomancer', u'Naga_Siren', u'Treant_Protector', u'Morphling', u'Lion', u'Dazzle', u'Magnus', u'Pudge', u'Centaur_Warrunner', u'Warlock', u'Sven', u'Shadow_Shaman', u'Outworld_Devourer', u'Lifestealer', u'Keeper_of_the_Light', u'Clockwerk', u'Night_Stalker', u'Oracle', u'Phantom_Assassin', u'Earthshaker', u'Puck', u'Luna', u'Faceless_Void', u'Shadow_Fiend', u'Disruptor', u'Timbersaw', u'Vengeful_Spirit', u'Templar_Assassin', u'Winter_Wyvern', u'Lycan', u'Beastmaster', u'Bloodseeker', u'Bane', u'Windranger', u'Terrorblade', u'Nyx_Assassin', u'Kunkka', u'Slark', u'Weaver', u'Bounty_Hunter', u'Visage', u'Tidehunter', u'Io', u'Chen', u'Rubick']
+[u'Razor', u'Legion_Commander', u'Ogre_Magi', u'Juggernaut', u'Ursa', u'Ancient_Apparition', u'Jakiro', u'Pugna', u'Tinker',
+u'Omniknight', u'Undying', u'Elder_Titan', u'Abaddon', u'Dark_Seer', u'Mirana', u'Bristleback', u'Sand_King', u'Slardar',
+u'Anti-Mage', u'Storm_Spirit', u'Medusa', u'Ember_Spirit', u'Queen_of_Pain', u'Enchantress', u'Riki', u'Invoker',
+u'Earth_Spirit', u"Nature's_Prophet", u'Sniper', u'Witch_Doctor', u'Leshrac', u'Silencer', u'Enigma', u'Doom',
+u'Spirit_Breaker', u'Alchemist', u'Batrider', u'Brewmaster', u'Dragon_Knight', u'Axe', u'Drow_Ranger', u'Shadow_Demon',
+u'Clinkz', u'Venomancer', u'Naga_Siren', u'Treant_Protector', u'Morphling', u'Lion', u'Dazzle', u'Magnus', u'Pudge',
+u'Centaur_Warrunner', u'Warlock', u'Sven', u'Shadow_Shaman', u'Outworld_Devourer', u'Lifestealer', u'Keeper_of_the_Light',
+u'Clockwerk', u'Night_Stalker', u'Oracle', u'Phantom_Assassin', u'Earthshaker', u'Puck', u'Luna', u'Faceless_Void',
+u'Shadow_Fiend', u'Disruptor', u'Timbersaw', u'Vengeful_Spirit', u'Templar_Assassin', u'Winter_Wyvern', u'Lycan',
+u'Beastmaster', u'Bloodseeker', u'Bane', u'Windranger', u'Terrorblade', u'Nyx_Assassin', u'Kunkka', u'Slark', u'Weaver',
+u'Bounty_Hunter', u'Visage', u'Tidehunter', u'Io', u'Chen', u'Rubick']
 ```
+已经获取到了所有英雄的图片url地址。
 
-将战队名称、近卫夜魇和使用的英雄作为特征，基于朴素贝叶斯分类算法，
+
+将战队名称、近卫夜魇和使用的英雄作为特征，基于朴素贝叶斯分类算法
 ```python
 >>> infoList[:10]
 [u'radiant', u'LGD-GAMING', u'Nyx_Assassin', u'Ogre_Magi', u'Weaver', u'Oracle', u'Timbersaw'], 
@@ -147,7 +176,10 @@
 [u'dire', u'Newbee', u'Rubick', u'Juggernaut', u'Sand_King', u'Outworld_Devourer', u'Omniknight']]
 
 >>> resultVec
-[0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0]
+[0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 
+1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 
+1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 
+1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0]
 ```
 将上面的数据分成训练集和测试集，由于数据量很小，所以只选了其中4组作为测试集。
 
