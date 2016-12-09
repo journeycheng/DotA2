@@ -100,5 +100,19 @@
 
 将各战队使用的英雄数据提取出来，用于分析。比如像这样的
 ```json
-{"pick_heroes": ["Nyx Assassin", "Ogre Magi", "Weaver", "Oracle", "Timbersaw"], "game_result": "lose", "team_name": "LGD-GAMING", "match_id": 2832112211, "game_side": "radiant"}
+{
+    "pick_heroes": [
+        "Nyx_Assassin",
+        "Ogre_Magi",
+        "Weaver",
+        "Oracle",
+        "Timbersaw"
+    ],
+    "game_result": "lose",
+    "team_name": "LGD-GAMING",
+    "match_id": 2832112211,
+    "game_side": "radiant"
+}
 ```
+为了方便分析，把英雄名字中有空格的被替换成了下划线。
+
