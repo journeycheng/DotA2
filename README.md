@@ -114,5 +114,21 @@
     "game_side": "radiant"
 }
 ```
-为了方便分析，把英雄名字中有空格的被替换成了下划线。
+为了方便分析，把英雄名字和战队名字中的空格被替换成了下划线。
 
+```json
+>>> infoList[:10]
+[u'radiant', u'LGD-GAMING', u'Nyx_Assassin', u'Ogre_Magi', u'Weaver', u'Oracle', u'Timbersaw'], 
+[u'dire', u'LGD.Forever_Young', u'Batrider', u'Lifestealer', u'Disruptor', u'Dragon_Knight', u'Slardar'], 
+[u'radiant', u'LGD-GAMING', u'Nyx_Assassin', u'Ogre_Magi', u'Lifestealer', u'Io', u'Shadow_Fiend'], 
+[u'dire', u'LGD.Forever_Young', u'Batrider', u'Silencer', u'Juggernaut', u'Sand_King', u'Dragon_Knight'], 
+[u'radiant', u'Team_AD_FINEM', u'Shadow_Demon', u'Nyx_Assassin', u'Alchemist', u'Mirana', u'Weaver'], 
+[u'dire', u'Newbee', u'Batrider', u'Luna', u'Warlock', u'Timbersaw', u'Sand_King'], 
+[u'radiant', u'Team_AD_FINEM', u'Batrider', u'Rubick', u'Bounty_Hunter', u'Puck', u'Morphling'], 
+[u'dire', u'Newbee', u'Ogre_Magi', u'Sand_King', u'Oracle', u'Slark', u'Dragon_Knight'], 
+[u'radiant', u'Team_AD_FINEM', u'Bounty_Hunter', u'Dark_Seer', u'Bane', u'Luna', u'Templar_Assassin'], 
+[u'dire', u'Newbee', u'Rubick', u'Juggernaut', u'Sand_King', u'Outworld_Devourer', u'Omniknight']]
+
+>>> resultVec
+[0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0]
+```
