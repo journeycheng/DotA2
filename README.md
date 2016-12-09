@@ -116,7 +116,7 @@
 ```
 为了方便分析，把英雄名字和战队名字中的空格被替换成了下划线。
 
-```json
+```python
 >>> infoList[:10]
 [u'radiant', u'LGD-GAMING', u'Nyx_Assassin', u'Ogre_Magi', u'Weaver', u'Oracle', u'Timbersaw'], 
 [u'dire', u'LGD.Forever_Young', u'Batrider', u'Lifestealer', u'Disruptor', u'Dragon_Knight', u'Slardar'], 
