@@ -1,5 +1,8 @@
 # DotA2
 
+
+
+
 ## 英雄id和对应的名字
 ```json
 {"1": "Anti-Mage"}
@@ -116,6 +119,21 @@
 ```
 为了方便分析，把英雄名字和战队名字中的空格被替换成了下划线。
 
+
+16只战队
+```
+[u'Team_AD_FINEM', u'Newbee', u'Evil_Geniuses', u'Team_NP', 
+ u'Faceless', u'Virtus.pro', u'MVP_Phoenix', u'EHOME', 
+ u'OG_Dota2', u'Digital_Chaos', u'compLexity_Gaming', u'WarriorsGaming.Unity', 
+ u'LGD-GAMING', u'the_wings_gaming', u'LGD.Forever_Young', u'iG.Vitality']
+```
+
+目前已经使用了88个英雄
+```python
+[u'Razor', u'Legion_Commander', u'Ogre_Magi', u'Juggernaut', u'Ursa', u'Ancient_Apparition', u'Jakiro', u'Pugna', u'Tinker', u'Omniknight', u'Undying', u'Elder_Titan', u'Abaddon', u'Dark_Seer', u'Mirana', u'Bristleback', u'Sand_King', u'Slardar', u'Anti-Mage', u'Storm_Spirit', u'Medusa', u'Ember_Spirit', u'Queen_of_Pain', u'Enchantress', u'Riki', u'Invoker', u'Earth_Spirit', u"Nature's_Prophet", u'Sniper', u'Witch_Doctor', u'Leshrac', u'Silencer', u'Enigma', u'Doom', u'Spirit_Breaker', u'Alchemist', u'Batrider', u'Brewmaster', u'Dragon_Knight', u'Axe', u'Drow_Ranger', u'Shadow_Demon', u'Clinkz', u'Venomancer', u'Naga_Siren', u'Treant_Protector', u'Morphling', u'Lion', u'Dazzle', u'Magnus', u'Pudge', u'Centaur_Warrunner', u'Warlock', u'Sven', u'Shadow_Shaman', u'Outworld_Devourer', u'Lifestealer', u'Keeper_of_the_Light', u'Clockwerk', u'Night_Stalker', u'Oracle', u'Phantom_Assassin', u'Earthshaker', u'Puck', u'Luna', u'Faceless_Void', u'Shadow_Fiend', u'Disruptor', u'Timbersaw', u'Vengeful_Spirit', u'Templar_Assassin', u'Winter_Wyvern', u'Lycan', u'Beastmaster', u'Bloodseeker', u'Bane', u'Windranger', u'Terrorblade', u'Nyx_Assassin', u'Kunkka', u'Slark', u'Weaver', u'Bounty_Hunter', u'Visage', u'Tidehunter', u'Io', u'Chen', u'Rubick']
+```
+
+将战队名称、近卫夜魇和使用的英雄作为特征，基于朴素贝叶斯分类算法，
 ```python
 >>> infoList[:10]
 [u'radiant', u'LGD-GAMING', u'Nyx_Assassin', u'Ogre_Magi', u'Weaver', u'Oracle', u'Timbersaw'], 
@@ -132,3 +150,31 @@
 >>> resultVec
 [0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0]
 ```
+将上面的数据分成训练集和测试集，由于数据量很小，所以只选了其中4组作为测试集。
+
+
+中间的分析预测过程，下次再
+```python
+[u'radiant', u'MVP_Phoenix', u'Ogre_Magi', u"Nature's_Prophet", u'Drow_Ranger', u'Disruptor', u'Visage'] classified as:  0
+```
+[](BostonMajor/pic/mvp.png?raw=true)
+
+预测为失败，和实际情况相同
+
+```python
+[u'dire', u'Newbee', u'Slardar', u'Rubick', u'Juggernaut', u'Treant_Protector', u'Templar_Assassin'] classified as:  1
+```
+[](BostonMajor/pic/newbee.png?raw=true)
+预测为获胜，和实际情况相同
+
+```python
+[u'radiant', u'Virtus.pro', u'Ogre_Magi', u'Lifestealer', u'Sand_King', u'Io', u'Shadow_Fiend'] classified as:  1
+```
+[](BostonMajor/pic/vp.png?raw=true)
+预测为成功，和实际情况相同
+
+```python
+[u'dire', u'Team_NP', u'Drow_Ranger', u'Omniknight', u'Rubick', u'Outworld_Devourer', u'Undying'] classified as:  1
+```
+[](BostonMajor/pic/np.png?raw=true)
+预测为失败，和实际情况相反
