@@ -1,13 +1,13 @@
 # DotA2
 
 安装dota2api
-```python
+```linux
 $ pip install dota2api
 ```
 
 如果这种方式没有成功的话，可以用build source的方式
 
-```python
+```linux
 $ git clone https://github.com/joshuaduffy/dota2api/ && cd dota2api/
 $ python setup.py install
 ```
