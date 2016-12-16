@@ -21,7 +21,7 @@ $ python setup.py install
 ## 二、英雄信息
 ### 2.1 英雄id和对应的名字
 
-脚本文件: [heroes_info.py](HeroesInfo/heroes_info.py)
+
 ```json
 {"1": "Anti-Mage"}
 {"2": "Axe"}
@@ -37,8 +37,14 @@ $ python setup.py install
 ...
 ...
 ```
-存储在[heroes_id_name.json](HeroesInfo/heroes_id_name.json)文件
-### 英雄图片
+- 信息都存储在[heroes_id_name.json](HeroesInfo/heroes_id_name.json)文件
+- 获取上述信息的脚本: [heroes_info.py](HeroesInfo/heroes_info.py)
+
+### 2.2 英雄图片
+
+每个英雄的图片都分为small、large、full、vertical四种形式，都存放在了相应的文件夹下面。
+
+下面显示的就是small形式: 
 
 - ![](HeroesInfo/heroes_image/Monkey_King/monkey_king_sb.png?raw=true) [美猴王](HeroesInfo/heroes_image/Monkey_King)
 - ![](HeroesInfo/heroes_image/Underlord/abyssal_underlord_sb.png?raw=true) [深渊领主](HeroesInfo/heroes_image/Underlord)
@@ -153,6 +159,7 @@ $ python setup.py install
 - ![](HeroesInfo/heroes_image/Drow_Ranger/drow_ranger_sb.png?raw=true) [卓尔游侠](HeroesInfo/heroes_image/Drow_Ranger)
 - ![](HeroesInfo/heroes_image/Crystal_Maiden/crystal_maiden_sb.png?raw=true) [水晶室女](HeroesInfo/heroes_image/Crystal_Maiden)
 - ![](HeroesInfo/heroes_image/Bane/bane_sb.png?raw=true) [祸乱之源](HeroesInfo/heroes_image/Bane)
+
 
 ## 2016 Boston Major
 ### Boston Major战队比赛信息
