@@ -42,9 +42,27 @@ $ python setup.py install
 
 ### 2.2 英雄图片
 
-每个英雄的图片都分为small、large、full、vertical四种形式，都存放在了相应的文件夹下面。
+- 每个英雄的图片url信息存放在[heroes_name_portrait.json](https://github.com/journeycheng/DotA2/tree/master/HeroesInfo/heroes_name_portrait.json)文件中
 
-下面显示的就是small形式: 
+每行内容形式如下，key为英雄的名字，value为url集合：
+```json
+{
+    "Anti-Mage": {
+        "small": "http://cdn.dota2.com/apps/dota2/images/heroes/antimage_sb.png",
+        "large": "http://cdn.dota2.com/apps/dota2/images/heroes/antimage_lg.png",
+        "full": "http://cdn.dota2.com/apps/dota2/images/heroes/antimage_full.png",
+        "vertical": "http://cdn.dota2.com/apps/dota2/images/heroes/antimage_vert.jpg"
+    }
+}
+```
+
+- 根据url下载图片的脚本[download_heroes_images.py](https://github.com/journeycheng/DotA2/tree/master/HeroesInfo/download_heroes_images.py)
+
+获取到的每个英雄图片分为small、large、full、vertical四种形式，分别存放在了相应的文件夹下面。
+
+[所有图片的压缩包文件](https://github.com/journeycheng/DotA2/tree/master/HeroesInfo/heroes_image.zip)
+
+每个英雄的所有形式图片，下面是small的: 
 
 - ![](HeroesInfo/heroes_image/Monkey_King/monkey_king_sb.png?raw=true)
 ![](HeroesInfo/heroes_image/Underlord/abyssal_underlord_sb.png?raw=true)
