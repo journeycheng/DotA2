@@ -1,6 +1,7 @@
 # DotA2
 
-安装dota2api
+## 一、准备工作
+### 1.1 安装dota2api
 ```linux
 $ pip install dota2api
 ```
@@ -11,15 +12,16 @@ $ pip install dota2api
 $ git clone https://github.com/joshuaduffy/dota2api/ && cd dota2api/
 $ python setup.py install
 ```
+### 1.2 申请API key
+去 [Valve](https://steamcommunity.com/dev/apikey) 申请。
 
-去Valve申请 API Key
-[链接在这里](https://steamcommunity.com/dev/apikey)
-
-
-之后就可以写脚本，利用api获得很多很多的数据了。
+### 1.3 阅读dota2api 开发文档
 [具体的api使用教程](http://dota2api.readthedocs.io/en/latest/index.html)
 
-## 英雄id和对应的名字
+## 二、英雄信息
+### 2.1 英雄id和对应的名字
+
+脚本文件: [heroes_info.py](HeroesInfo/heroes_info.py)
 ```json
 {"1": "Anti-Mage"}
 {"2": "Axe"}
@@ -35,6 +37,7 @@ $ python setup.py install
 ...
 ...
 ```
+存储在[heroes_id_name.json](HeroesInfo/heroes_id_name.json)文件
 ### 英雄图片
 
 - ![](HeroesInfo/heroes_image/Monkey_King/monkey_king_sb.png?raw=true) [美猴王](HeroesInfo/heroes_image/Monkey_King)
