@@ -16,7 +16,10 @@ $ python setup.py install
 去 [Valve](https://steamcommunity.com/dev/apikey) 申请。
 
 ### 1.3 阅读dota2api 开发文档
-[具体的api使用教程](http://dota2api.readthedocs.io/en/latest/index.html)
+
+*待添加* 
+
+[英文原版在这里](http://dota2api.readthedocs.io/en/latest/index.html)
 
 ## 二、英雄信息
 ### 2.1 英雄id和对应的名字
@@ -42,7 +45,7 @@ $ python setup.py install
 
 ### 2.2 英雄图片
 
-- 每个英雄的图片url信息存放在[heroes_name_portrait.json](https://github.com/journeycheng/DotA2/tree/master/HeroesInfo/heroes_name_portrait.json)文件中
+- (1) 每个英雄的图片url信息存放在[heroes_name_portrait.json](https://github.com/journeycheng/DotA2/tree/master/HeroesInfo/heroes_name_portrait.json)文件中
 
 每行内容形式如下，key为英雄的名字，value为url集合：
 ```json
@@ -56,13 +59,13 @@ $ python setup.py install
 }
 ```
 
-- 根据url下载图片的脚本[download_heroes_images.py](https://github.com/journeycheng/DotA2/tree/master/HeroesInfo/download_heroes_images.py)
+- (2) 根据url下载图片的脚本[download_heroes_images.py](https://github.com/journeycheng/DotA2/tree/master/HeroesInfo/download_heroes_images.py)
 
-获取到的每个英雄图片分为small、large、full、vertical四种形式，分别存放在了相应的文件夹下面。
+- (3) 获取到的每个英雄图片分为small、large、full、vertical四种形式，分别存放在了相应的文件夹下面。
 
-[所有图片的压缩包文件](https://github.com/journeycheng/DotA2/tree/master/HeroesInfo/heroes_image.zip)
+- > [所有图片的压缩包文件](https://github.com/journeycheng/DotA2/tree/master/HeroesInfo/heroes_image.zip)
 
-每个英雄的所有形式图片，下面是small的: 
+- > 每个英雄的所有形式图片，下面是small的: 
 
 - ![](HeroesInfo/heroes_image/Monkey_King/monkey_king_sb.png?raw=true)
 ![](HeroesInfo/heroes_image/Underlord/abyssal_underlord_sb.png?raw=true)
@@ -317,7 +320,16 @@ $ python setup.py install
 [水晶室女](HeroesInfo/heroes_image/Crystal_Maiden)
 [祸乱之源](HeroesInfo/heroes_image/Bane)
 [小小](HeroesInfo/heroes_image/Tiny)
-## 2016 Boston Major
+
+
+## 三、2016 Boston Major
+
+### 3.1 正赛match id
+
+存放在[Boston_major_match_id.txt](https://github.com/journeycheng/DotA2/tree/master/BostonMajor/Boston_major_match_id.txt)文件中
+
+（待添加爬取match id的程序，从dotamax上获取）
+
 ### Boston Major战队比赛信息
 ```json
 {
@@ -491,3 +503,9 @@ u'Bounty_Hunter', u'Visage', u'Tidehunter', u'Io', u'Chen', u'Rubick']
 ```
 ![](BostonMajor/pic/np.png?raw=true)
 预测为失败，和实际情况相反
+
+## 四、AF战队战绩分析
+
+### 4.1 Boston Major黑马之旅
+
+### 4.2 AF所有比赛数据
