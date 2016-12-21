@@ -16,7 +16,8 @@ $ python setup.py install
 去 [Valve](https://steamcommunity.com/dev/apikey) 申请。
 
 ### 1.3 阅读dota2api 开发文档
-#### initialising
+
+#### 1.3.1 initialising
 ```python
 import dota2api
 api = dota2.api.Initialise(API_KEY)
@@ -24,7 +25,8 @@ api = dota2.api.Initialise(API_KEY)
 
 API_KEY就是前面申请的API key。
 
-#### 开发接口
+#### 1.3.2 接口调用
+
 - get_match_details
 
 ```python
