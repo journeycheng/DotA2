@@ -16,8 +16,7 @@ $ python setup.py install
 去 [Valve](https://steamcommunity.com/dev/apikey) 申请。
 
 ### 1.3 阅读dota2api 开发文档
-
-- initialising
+#### initialising
 ```python
 import dota2api
 api = dota2.api.Initialise(API_KEY)
@@ -25,8 +24,8 @@ api = dota2.api.Initialise(API_KEY)
 
 API_KEY就是前面申请的API key。
 
-- 开发接口
-- > get_match_details
+#### 开发接口
+- get_match_details
 
 ```python
 match = api.get_match_details(match_id)
@@ -76,7 +75,10 @@ match中包含的字段信息
 | cluster | int | 比赛的服务器位置，用于比赛重启 |
 | cluster_name | string | 和cluster含义相同 |
 
+
 bans_picks字段包含了bp过程的完整信息
+
+
 
 | 字段 | 数据类型 | 描述 |
 | :--: | :--: | :-- : |
@@ -85,7 +87,9 @@ bans_picks字段包含了bp过程的完整信息
 | order | int | 当前的次序，总共20(0～19) |
 | is_pick | boolean | false表示禁用，true表示选用 |
 
+
 players字段包含了所有玩家的本场比赛数据
+
 
 | 字段 | 数据类型 | 描述 |
 | :--: | :--: | :-- : |
@@ -120,6 +124,8 @@ players字段包含了所有玩家的本场比赛数据
 
 
 ability_upgrade字段
+
+
 | 字段 | 数据类型 | 描述 |
 | :--: | :--: | :-- : |
 | level | int | 英雄等级 |
