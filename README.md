@@ -26,8 +26,61 @@ api = dota2.api.Initialise(API_KEY)
 API_KEY就是前面申请的API key。
 
 - 开发接口
+- > get_match_details
+
+```python
+match = api.get_match_details(match_id)
+```
+match中包含的字段信息
+
+|字段 |数据类型   |说明 |
+|:---:  |:－--:  |:----: |
+|match_id   |int    |比赛id   |
+|dire_team_id   |int    |夜魇方队伍id    |
+|lobby  |string |   |
+
+```
+match.keys()
 
 
+['dire_team_id',            - int,
+ 'barracks_status_dire', 
+ 'match_id', 
+ 'lobby_name', 
+ 'barracks_status_radiant', 
+ 'cluster', 
+ 'first_blood_time', 
+ 'dire_score', 
+ 'duration', 
+ 'radiant_win', 
+ 'human_players', 
+ 'tower_status_dire', 
+ 'radiant_logo', 
+ 'radiant_captain', 
+ 'radiant_team_complete', 
+ 'cluster_name', 
+ 'leagueid', 
+ 'game_mode_name', 
+ 'dire_captain', 
+ 'engine', 
+ 'radiant_score', 
+ 'lobby_type', 
+ 'dire_name', 
+ 'start_time', 
+ 'match_seq_num', 
+ 'tower_status_radiant', 
+ 'negative_votes', 
+ 'picks_bans', 
+ 'radiant_team_id', 
+ 'positive_votes', 
+ 'game_mode', 
+ 'dire_logo', 
+ 'dire_team_complete', 
+ 'players', 
+ 'flags', 
+ 'pre_game_duration', 
+ 'radiant_name']
+```
 [英文原版在这里](http://dota2api.readthedocs.io/en/latest/index.html)
 
 ## 二、英雄信息
