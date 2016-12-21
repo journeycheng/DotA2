@@ -33,55 +33,144 @@ match = api.get_match_details(match_id)
 ```
 match中包含的字段信息
 
-|字段 |数据类型   |说明 |
-|:---:  |:－--:  |:----: |
-|match_id   |int    |比赛id   |
-|dire_team_id   |int    |夜魇方队伍id    |
-|lobby  |string |   |
+| 字段  | 数据类型 | 说明 |
+| :--: | :--: | :--: |
+| -重要- | | |
+| match_id  | int  | 比赛id  |
+| picks_bans | list[dic] | 英雄禁选信息 |
+| players | list[dic] | 玩家信息 |
+| radiant_win | boolean | 近卫获胜True、False |
+| radiant_team_id | int | 近卫方队伍id |
+| radiant_name | string | 近卫方队伍名称 |
+| radiant_captain | int | 近卫队伍队长id |
+| radiant_team_complete | int | 近卫队伍人员是否完整(1、0) |
+| dire_team_id  | int  | 夜魇方队伍id  |
+| dire_name | string | 夜魇方队伍名称 |
+| dire_captain | int | 夜魇队伍队长id |
+| dire_team_complete | int | 夜魇队伍人员是否完整(1、0) |
+| -可能重要- | | |
+| radiant_score | int | 夜魇队伍得分 |
+| tower_status_radiant | int | 近卫方建筑状态 |
+| dire_score | int | *不知道如何计算的* |
+| tower_status_dire | int | |
+| barracks_status_radiant | int | 近卫支持数 |
+| duration | int | 比赛持续时间 |
+| first_blood_time | int | 一血产生时间 |
+| negative_votes | int | 对比赛精彩程度的负面投票数量 |
+| positive_votes | int | 对比赛精彩程度的正面投票数量 |
+| -不太重要- | | |
+| leagueid | int | 联赛id |
+| game_mode_name | string | 对战模式 |
+| engine | int | *不知道是啥* |
+| start_time | int | 比赛开始时间Unix timestamp |
+| match_seq_num | int | *不知道是啥* |
+| game_mode | int | 对战模式对应id |
+| dire_logo | int | 夜魇队伍logo id |
+| flags | int | 不知道什么flag |
+| pre_game_duration | int | *不知道* |
+| lobby_name | string | 比赛模式 |
+| lobby_type | int | 比赛模式对应id |
+| cluster_name | string | 比赛的地理位置 |
+| radiant_logo | int | 近卫队伍logo id |
+| human_players | int | 真实玩家数量 |
+| cluster | int | 比赛的服务器位置，用于比赛重启 |
+| cluster_name | string | 和cluster含义相同 |
 
-```
-match.keys()
+bans_picks字段包含了bp过程的完整信息
+
+| 字段 | 数据类型 | 描述 |
+| :--: | :--: | :-- : |
+| team | int | 0表示近卫，1表示夜魇 |
+| hero_id | int | 当前禁用或选用的英雄id |
+| order | int | 当前的次序，总共20(0～19) |
+| is_pick | boolean | false表示禁用，true表示选用 |
+
+players字段包含了所有玩家的本场比赛数据
+
+| 字段 | 数据类型 | 描述 |
+| :--: | :--: | :-- : |
+| hero_id | int | 英雄id |
+| hero_name | string | 英雄id对应名称 |
+| kills | int | 玩家击杀次数 |
+| deaths | int | 死亡次数 |
+| assists | int | 玩家助攻次数 |
+| denies | int | 反补次数 |
+| gold_spent | int | 花费金钱数 |
+| gold | int | 持有金钱数 |
+| hero_damage | int | 对英雄造成的伤害量
+| tower_damage | int | 对塔造成的伤害量 |
+| hero_healing | int | 英雄提供的治疗量 |
+| gold_per_min | int | 平均每分钟的金钱数 |
+| xp_per_min | int | 平均每分钟的经验值 |
+| ability_upgrades | list[dic] | 技能升级路线 |
+| level | int | 最终英雄等级 |
+| item_# | int | 物品#(0-5)id |
+| item_#_name | string | 物品#(0-5)名称 |
+| backpack_# | int | 背包#(0-2)的物品id |
+| 分割线 | 分割线 | 分割线 |
+| account_id | int | 玩家账号id |
+| player_slot | int | 玩家在队伍中的位置（实际并没有给出） |
+| leaver_status | string | 玩家离开游戏状态id |
+| leaver_status_name | string | 玩家离开游戏状态 |
+| leaver_status_description | string | 玩家离开游戏状态对应描述 |
+| scaled_hero_damage | int | |
+| last_hists | int | |
+| scaled_hero_healing | int | |
+| scaled_tower_damage | int | |
 
 
-['dire_team_id',            - int,
- 'barracks_status_dire', 
- 'match_id', 
- 'lobby_name', 
- 'barracks_status_radiant', 
- 'cluster', 
- 'first_blood_time', 
- 'dire_score', 
- 'duration', 
- 'radiant_win', 
- 'human_players', 
- 'tower_status_dire', 
- 'radiant_logo', 
- 'radiant_captain', 
- 'radiant_team_complete', 
- 'cluster_name', 
- 'leagueid', 
- 'game_mode_name', 
- 'dire_captain', 
- 'engine', 
- 'radiant_score', 
- 'lobby_type', 
- 'dire_name', 
- 'start_time', 
- 'match_seq_num', 
- 'tower_status_radiant', 
- 'negative_votes', 
- 'picks_bans', 
- 'radiant_team_id', 
- 'positive_votes', 
- 'game_mode', 
- 'dire_logo', 
- 'dire_team_complete', 
- 'players', 
- 'flags', 
- 'pre_game_duration', 
- 'radiant_name']
-```
-[英文原版在这里](http://dota2api.readthedocs.io/en/latest/index.html)
+ability_upgrade字段
+| 字段 | 数据类型 | 描述 |
+| :--: | :--: | :-- : |
+| level | int | 英雄等级 |
+| ability | int | 升级的技能id |
+| time ｜ int | 升级技能的时间 |
+
+game_mode 
+
+| Value | Description |
+| :--: | :--: |
+| 0 | Unknown |
+| 1 | All Pick |
+| 2 | Caption's Mode |
+| 3 | Random Draft |
+| 4 | Single Draft |
+| 5 | All Random |
+| 6 | Intro |
+| 7 | Diretie |
+| 8 | Reverse Captain's Mode |
+| 9 | The Greeviling |
+| 10 | Tutotial |
+| 11 | Mid Only |
+| 12 | Least Played |
+| 13 | New Player Pool |
+| 14 | Compendium Matchmaking |
+| 15 | Custom |
+| 16 | Captions Draft |
+| 17 | Balanced Draft |
+| 18 | Ability Draft |
+| 19 | Event |
+| 20 | All Random Death Match |
+| 21 | Solo Mid 1 vs 1 |
+| 22 | Ranked All Pick |
+
+lobby_type
+
+| Status | Description |
+| :--: | :--: |
+| -1 | Invalid |
+| 0 | Public matchmaking |
+| 1 | Practice |
+| 2 | Tournament |
+| 3 | Tutorial |
+| 4 | Co-op with AI |
+| 5 | Team match |
+| 6 | Solo queue |
+| 7 | Ranked matchmaking |
+| 8 | Solo Mid 1 vs 1 |
+
+
+[英文原版在这里，好久没更新的样子](http://dota2api.readthedocs.io/en/latest/index.html)
 
 ## 二、英雄信息
 ### 2.1 英雄id和对应的名字
